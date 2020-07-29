@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Calendar</h1>
+    {% include "calendar/fullCalendar.html" %}
+    <p class="lead">Get a better view of the Calendar.</p>
+    <p><a href="{{ url_for('viewCalendar') }}" class="btn btn-primary btn-large">Calendar &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Club Info</h2>
+        <p>
+            View and edit club information.
+        </p>
+        <p><a class="btn btn-default" href="{{ url_for('clubInfo') }}">Club Info &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Coaches</h2>
+        <p>View all Coaches, and manage permissions.</p>
+        <p><a class="btn btn-default" href="{{ url_for('coachInfo') }}">Coaches &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Squads</h2>
+        <p>View all Squads, and manage swimmers.</p>
+        <p><a class="btn btn-default" href="{{ url_for('squadInfo') }}">Squads &raquo;</a></p>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+
+{% if dataExists == False %}
+
+<h1>Club Info</h1>
+<hr />
+<p class="lead">There is no club data to retrieve!</p>
+
+<p class="text-center" style="color:red">No Data!</p>
+
+<p><a href="{{ url_for('editClubInfo') }}" class="btn btn-primary btn-large">Generate Data &raquo;</a></p>
+
+{% else %}
+
+<h1>{{ team }} - Club Info</h1>
+
+<p>Coach: {{ coach }}</p>
+
+<p><a href="{{ url_for('editClubInfo') }}" class="btn btn-primary btn-large">Edit &raquo;</a></p>
+
+
+{% endif %}
+
+{% endblock %}

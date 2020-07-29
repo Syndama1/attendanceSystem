@@ -1,0 +1,26 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Edit Data</h1>
+<hr />
+
+<form action="" method="POST">
+    <label for="clubname">Club Name:</label>
+    <input type="text" {{ defaultTitle }} name="clubname" value="{{
+      request.form.clubname }}">
+    <br />
+    <label for="coach">Coach:</label>
+    <input type="text" {{ defaultCoach }} name="coach" value="{{
+      request.form.coach }}">
+    <br />
+    <textarea style="resize: none" type="text" {{ defaultDescription }} name="description" value="{{
+      request.form.description }}" rows="4" cols="200"></textarea>
+    <br />
+    <br />
+    <p><a class="btn btn-default" href="{{ url_for('clubInfo') }}">Cancel</a></p>
+    <input class="btn btn-default" type="submit" value="Save">
+</form>
+
+
+{% endblock %}

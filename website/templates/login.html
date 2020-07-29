@@ -1,0 +1,39 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Attendance System</title>
+    <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
+    <script src="/static/scripts/modernizr-2.6.2.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Please login</h1>
+
+        <hr>
+
+        {% if error %}
+
+        <p class="error" style="color:red;">
+            <strong>Error:</strong> {{ error }}
+        </p>
+
+        {% endif %}
+
+        <form action="" method="POST">
+            <input type="text" placeholder="Username" name="username" value="{{
+          request.form.username }}">
+            <input type="password" placeholder="Password" name="password" value="{{
+          request.form.password }}">
+            <input class="btn btn-default" type="submit" value="Login">
+        </form>
+
+    </div>
+</body>
+
+{% endblock %}

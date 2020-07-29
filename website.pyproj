@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>e006054a-0c55-4201-be8f-9fc6051a7bac</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>runserver.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <Name>website</Name>
+    <RootNamespace>website</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="runserver.py" />
+    <Compile Include="website\data\coaches.csv">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="website\pythonScripts\algorithmsModule.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="website\pythonScripts\clubDataModule.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="website\pythonScripts\coachDataModule.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="website\pythonScripts\loginModule.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="website\pythonScripts\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="website\__init__.py" />
+    <Compile Include="website\views.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="website\" />
+    <Folder Include="website\data\squads\" />
+    <Folder Include="website\images\" />
+    <Folder Include="website\pythonScripts\" />
+    <Folder Include="website\data\" />
+    <Folder Include="website\static\" />
+    <Folder Include="website\static\content\" />
+    <Folder Include="website\static\fonts\" />
+    <Folder Include="website\static\scripts\" />
+    <Folder Include="website\templates\" />
+    <Folder Include="website\templates\clubInfo\" />
+    <Folder Include="website\templates\calendar\" />
+    <Folder Include="website\templates\coachInfo\" />
+    <Folder Include="website\templates\squadInfo\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
+    <Content Include="website\data\eventsDatabase.csv" />
+    <Content Include="website\data\squads.csv">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="website\static\content\bootstrap.css" />
+    <Content Include="website\static\content\bootstrap.min.css" />
+    <Content Include="website\static\content\site.css" />
+    <Content Include="website\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="website\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="website\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="website\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="website\static\scripts\bootstrap.js" />
+    <Content Include="website\static\scripts\bootstrap.min.js" />
+    <Content Include="website\static\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="website\static\scripts\jquery-1.10.2.js" />
+    <Content Include="website\static\scripts\jquery-1.10.2.min.js" />
+    <Content Include="website\static\scripts\jquery-1.10.2.min.map" />
+    <Content Include="website\static\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="website\static\scripts\jquery.validate.js" />
+    <Content Include="website\static\scripts\jquery.validate.min.js" />
+    <Content Include="website\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="website\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="website\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="website\static\scripts\respond.js" />
+    <Content Include="website\static\scripts\respond.min.js" />
+    <Content Include="website\static\scripts\_references.js" />
+    <Content Include="website\templates\about.html" />
+    <Content Include="website\templates\calendar\dayCalendar.html" />
+    <Content Include="website\templates\calendar\fullCalendar.html" />
+    <Content Include="website\templates\calendar\viewCalendar.html" />
+    <Content Include="website\templates\clubInfo\clubInfo.html" />
+    <Content Include="website\templates\clubInfo\editClubInfo.html" />
+    <Content Include="website\templates\coachInfo\addCoachInfo.html" />
+    <Content Include="website\templates\coachInfo\coachInfo.html" />
+    <Content Include="website\templates\coachInfo\editCoachInfo.html" />
+    <Content Include="website\templates\contact.html" />
+    <Content Include="website\templates\index.html" />
+    <Content Include="website\templates\layout.html" />
+    <Content Include="website\templates\login.html" />
+    <Content Include="website\templates\squadInfo\addSquadInfo.html" />
+    <Content Include="website\templates\squadInfo\editSquadInfo.html" />
+    <Content Include="website\templates\squadInfo\squadInfo.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.6</Version>
+      <Description>env (Python 3.6 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
