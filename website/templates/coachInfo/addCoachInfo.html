@@ -1,11 +1,26 @@
-<!DOCTYPE html>
+﻿{% extends "layout.html" %}
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
+{% block content %}
 
-</body>
-</html>
+<h1>Edit Data</h1>
+<hr />
+
+<form action="" method="POST">
+    <label for="clubname">Coach Name:</label>
+    <input type="text" {{ defaultName | safe }} name="name" value="{{
+      request.form.name }}">
+    <br />
+    <label for="coach">Age:</label>
+    <input type="number" {{ defaultAge | safe }} name="age" value="{{
+      request.form.age }}">
+    <br />
+    <textarea style="resize: none" type="text" {{ defaultDescription | safe }} name="description" value="{{
+      request.form.description }}" rows="4" cols="200"></textarea>
+    <br />
+    <br />
+    <p><a class="btn btn-default" href="{{ url_for('coachInfo') }}">Cancel</a></p>
+    <input class="btn btn-default" type="submit" value="Save">
+</form>
+
+
+{% endblock %}

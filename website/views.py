@@ -6,6 +6,7 @@ from datetime import datetime
 from flask import render_template, redirect, url_for, request
 from website import app
 from website.pythonScripts import clubDataModule
+from website.pythonScripts import coachDataModule
 import calendar
 
 dataPath = 'website/data'
@@ -158,19 +159,44 @@ def coachInfo():
 @app.route('/coaches/edit')
 def editCoachInfo():
 
-    return render_template(
-        'coachInfo/editCoachInfo.html',
-        title='Edit Coach',
+    if coachDataModule.checkData(dataPath):
+        data = coachDataModule.openFile(dataPath)
 
-    )
+        if len(data) == 3:
+            coachData = coachDataModule.coachData(data[0][0], data[0][1], data[0][1])
 
-@app.route('/coaches/add')
+        return render_template(
+            'clubInfo/editCoachInfo.html',
+            title='Edit Coach Info',
+            year=datetime.now().year,
+            defaultTitle=coachData.title,
+            defaultCoach=coachData.coach,
+            defaultDescription=coachData.description,
+        )
+
+    
+@app.route('/coaches/add', methods=['GET', 'POST'])
 def addCoachInfo():
+    if session == None:
+        return redirect(url_for('login'))
+
+    if request.method == 'POST':
+        coachInfo=[]
+        coachInfo.append(request.form['name'])
+        coachInfo.append(request.form['age'])
+        coachInfo.append(request.form['description'])
+
+        coachDataModule.writeData(dataPath, coachInfo)
+
+        return redirect(url_for("coachInfo"))
 
     return render_template(
         'coachInfo/addCoachInfo.html',
-        title='Add Coach',
-
+        title='Edit Coach',
+        year=datetime.now().year,
+        defaultName="Name",
+        defaultAge="Age",
+        defaultDescription="Additional Information. eg. Phone, Email, Insta etc",
     )
 
 @app.route('/squads')
